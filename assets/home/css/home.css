@@ -1,53 +1,295 @@
+/* ==========================================================================
+   Palette
+   text        #7d858e    heading  #003373
+   link        #4a85c8    divider  #ddd
+   ========================================================================== */
 
-@media (min-width: 576px) {
-	.container {
-		max-width: 90%;
-	}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #7d858e;
+  background-color: #fff;
 }
 
-@media (min-width: 768px) {
-	.container {
-		max-width: 90%;
-	}
+p, ul, li {
+  font-size: 14px;
+  line-height: 24px;
 }
 
-@media (min-width: 992px) {
-	.container {
-		max-width: 960px;
-	}
+a {
+  text-decoration: none;
+  color: #4a85c8;
 }
 
-@media (min-width: 1200px) {
-	.container {
-		max-width: 1140px;
-	}
+a:hover {
+  color: #4a85c8;
+  border-bottom: 1px solid #4a85c8;
 }
 
-.profile-text {padding-right: 30px;}
+/* --------------------------------------------------------- container ---- */
 
-.profile-image {max-width: 65%; border-radius: 5%; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
+@media (min-width: 576px) { .container { max-width: 90%; } }
+@media (min-width: 768px) { .container { max-width: 90%; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
 
-.profile-link {margin: 0 -50%; font-size: 18px;}
+/* ------------------------------------------------------------ header ---- */
 
-.section {margin-bottom: 1em; font-weight: 600; margin-top:3em}
+.site-header {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 58px;
+  padding-top: 32px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+}
 
-.section row {margin:0;}
+.site-header a {
+  color: #a0a8b0;
+  border-bottom: none;
+}
 
-.pub {margin: 0 0 3em 0;}
+.site-header a:hover {
+  color: #4a85c8;
+  border-bottom: none;
+}
 
-.pub-img {padding: 0;}
+.site-header .sep {
+  padding: 0 12px;
+  color: #d5d9dd;
+}
 
-.pub-text {padding-left: 30px; padding-right:0;}
+/* smooth scrolling for the in-page anchor links */
+html {
+  scroll-behavior: smooth;
+}
 
-/*.sub-info {padding: .2em;}*/
+h1.section {
+  scroll-margin-top: 24px;
+}
 
-.sub-info.mark {background-color: #fffae0;}
-/*#fcf8e3*/
+/* ----------------------------------------------------------- profile ---- */
 
-.img-shadow {filter: drop-shadow(3px 3px 3px #c3c3c3);}
+.profile {
+  padding: 40px 0 10px 0;
+}
 
-.badge-waring {background-color: #ffde7c;}
+.profile-name {
+  font-size: 29px;
+  line-height: 24px;
+  /* font-weight: 500; */
+  margin-bottom: 20px;
+  color: #003373;
+}
 
-.badge-secondary {backgrond-color: #818182;}
+.profile-email {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
 
-.footer p {margin: 0; font-size: 13px; padding: 1em 0;}
+.profile-text {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 170px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.profile-link {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.profile-link .sep {
+  padding: 0 6px;
+}
+
+/* ------------------------------------------------------------ layout ---- */
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+h1.section {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #003373;
+  margin: 30px 0 20px 0;
+}
+
+/* -------------------------------------------------------- recent work --- */
+/* Used by the (currently commented out) slider above the publication list. */
+
+.recent-work {
+  padding-bottom: 20px;
+  margin: 30px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.slider img,
+.slider video {
+  height: 205px;
+  border-radius: 10px;
+}
+
+.slider a:hover {
+  border-bottom: none;
+}
+
+.recent-work::-webkit-scrollbar { background: none; height: 8px; }
+.recent-work::-webkit-scrollbar-track { background: #eee; border-radius: 4px; }
+.recent-work::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.recent-work::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* ------------------------------------------------------ publications ---- */
+
+.research-proj {
+  margin-bottom: 30px;
+}
+
+.research-thumb {
+  padding-left: 0;
+}
+
+.research-thumb img,
+.research-thumb video {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+  /* nudges the thumbnail down so its top edge optically aligns with the
+     title's cap height rather than the top of its line box (as in the reference) */
+  margin-top: 7px;
+}
+
+.research-info {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.research-proj-title {
+  color: #003373;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.research-links {
+  white-space: nowrap;
+}
+
+.research-links .sep {
+  padding: 0 8px;
+}
+
+/* Sub-info sits on its own line under the venue: one bullet, everything joined
+   on that single line, indented past the venue so it reads as subordinate. */
+
+/* .sub-info {
+  padding-left: 18px;
+  text-indent: -12px;
+} */
+
+/* .sub-info::before {
+  content: "\2022";
+  color: #c9ced3;
+  padding-right: 6px;
+} */
+
+/* Sub-info shares the venue line, separated by a pipe. Same size as the venue,
+   so colour is the only thing telling them apart: the venue is the one grey
+   item on the line, everything after it is colour-coded by kind. */
+
+.sub-sep {
+  padding: 0 10px;
+  color: #d5d9dd;
+}
+
+.sub-info {
+  font-size: 14px;
+}
+
+.sub-award {
+  color: #b8860b;   /* gold */
+}
+
+.sub-oral {
+  color: #c0392b;   /* red */
+}
+
+.sub-workshop {
+  color: #3f9fc4;   /* sky */
+}
+
+/* Previous pill/badge treatment, kept in case we want to go back to it.
+.tag-award,
+.tag-workshop {
+  display: inline-block;
+  padding: 1px 10px;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 22px;
+  border-radius: 4px;
+}
+
+.tag-award {
+  background-color: rgba(253, 196, 80, 0.18);
+  color: #8a6011;
+}
+
+.tag-workshop {
+  background-color: rgba(74, 133, 200, 0.12);
+  color: #35618f;
+}
+*/
+
+/* ---------------------------------------------------------- show more --- */
+/* Used by the (currently commented out) publication list toggle. */
+
+.showBtn {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.showBtn a {
+  color: #003373;
+  cursor: pointer;
+}
+
+.showBtn a:hover {
+  border-bottom: 1px solid #003373;
+}
+
+#morePubs,
+#lessPubsBtn {
+  display: none;
+}
+
+/* ------------------------------------------------------------- lists ---- */
+
+.section-list {
+  list-style-position: outside;
+  list-style-type: disc;
+  padding-left: 18px;
+  margin-bottom: 30px;
+}
+
+/* ------------------------------------------------------------ footer ---- */
+
+.footer p {
+  margin: 0;
+  font-size: 13px;
+  color: #a0a8b0;
+  padding: 1.5em 0;
+}

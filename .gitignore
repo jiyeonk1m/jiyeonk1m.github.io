@@ -4,3 +4,9 @@ assets/home/*.pptx
 deprecated_media/
 .idea/
 nerfies.html
+.vscode/
+
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md

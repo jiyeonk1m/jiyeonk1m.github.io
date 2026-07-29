@@ -3,11 +3,15 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Custom CSS -->
@@ -29,172 +33,222 @@
 
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-1"></div>
-      <div class="col-lg-10">
-        <div class="row" style="margin-top: 4em;">
-          <div class="col-md-8" style="">
-            <p>
-              <h2 style="margin: 0; font-weight: 600;">Kim Ji-Yeon</h2>
-              <medium class="text-muted"> jiyeon.kim@postech.ac.kr </medium>
-            </p>
-                  
-            <p class="profile-text text-justify">
-              I am a Ph.D. student at <a href="https://ami.kaist.ac.kr/" target="_blank">AMILab</a> in Convergence IT Engineering at <a href="https://postech.ac.kr/eng" target="_blank">POSTECH</a>, advised by <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh" target="_blank">Tae-Hyun Oh</a>. I received my Bachelor's degree in IT Engineering from Sookmyung Women's University. During my undergraduate, I also studied at <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a> as an exchange student.
-            </p>
-            <p class="profile-text text-justify" style="margin-bottom:0;">
-              My research focuses on computer vision and machine learning, specializing in understanding 3D world via 2D visual cues.
-              Recently, my research interests are on perceiving 3D humans in the scene. 
-            </p>
-          </div>
-          <div class="col-md-4 d-flex justify-content-between flex-column" align="center">
-            <p></p>
-            <div>
-              <img src="./assets/home/image/me.png" class="profile-image" alt="Profile picture">
-            </div> 
-            <div class="profile-link">
-              <a href="https://www.overleaf.com/read/zxsvdmnhxbkr#4f716a" target="_blank" class=""><b>CV</b></a>
-              |
-              <a href="https://scholar.google.com/citations?user=NYA9EpgAAAAJ&hl=en" target="_blank" class=""><b>Google Scholar</b></a>
-              |
-              <a href="https://github.com/J1Yeon-Kim" target="_blank" class=""><b>GitHub</b></a>
-              <!-- | -->
-              <!-- <a href="mailto:jiyeon.kim@postech.ac.kr" target="_blank"><b>Mail</b></a> -->
-            </div>
-          </div>
-          <!-- <div class="col-md-1"></div> -->
-        </div>
-        <div class="row" style="margin-top: 3em;">
-          <div class="col-sm-12" style="padding: 0;">
-            <h4 class="mt-2 section">Publications</h4>
 
-            <!--start of publications-->
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/clip-actor-x.png" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>CLIP-Actor-X: Text-driven 4D Human Avatar Generation via Cross-modal Synthesis-through-Optimization</b><br>
-                Kim Youwang*, Taehyun Byun*, <span><u>Kim Ji-Yeon</u></span>, Sungjoon Choi, Tae-Hyun Oh<br>
-                <span class="font-italic text-muted">Under review</span><br>
-                <span class="sub-info badge badge-warning">Minister's Award @ ICT Paper Awards 2023</span><br>
-                <!-- [<a href="https://vcad.site/#/papers" target="_blank">Paper</a> / 
-                <a href="https://jiyeon-k1m.github.io/uni-dvps" target="_blank">Project Page</a> /
-                <a href="https://github.com/postech-ami/Uni-DVPS" target="_blank">Code</a>] -->
-              </div> 
-            </div> 
+    <!-- ==================== header ==================== -->
+    <header class="site-header">
+      <a href="#publications">PUBLICATIONS</a><span class="sep">/</span><a href="#awards">AWARDS</a><span class="sep">/</span><a href="#services">SERVICES</a>
+    </header>
 
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/lidar.png" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>The Devil is in the Details: Simple Remedies for Image-to-LiDAR Representation Learning</b><br>
-                Jo Won-Jun, Kwon Byung-Ki, <span><u>Kim Ji-Yeon</u></span>, Kyungdon Joo, Hawook Jung, Tae-Hyun Oh<br>
-                <!-- <span class="font-italic text-muted">Under review</span><br> -->
-                <span>ACCV 2024</span><br>
-                [<a href="https://openaccess.thecvf.com/content/ACCV2024/papers/Jo_The_Devil_is_in_the_Details_Simple_Remedies_for__ACCV_2024_paper.pdf" target="_blank">Paper</a> / 
-                <a href="https://sr-i2l.github.io/" target="_blank">Project Page</a> /
-                <a href="https://github.com/kaist-ami/I2L-Remedy" target="_blank">Code</a>]
-              </div> 
-            </div> 
+    <!-- ==================== profile ==================== -->
+    <div class="row profile">
+      <div class="col-sm-4 text-center">
+        <img src="./assets/home/image/me.png" class="profile-image" alt="Profile picture">
+        <p class="profile-link">
+          <a href="https://www.overleaf.com/read/zxsvdmnhxbkr#4f716a" target="_blank">CV</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=NYA9EpgAAAAJ&hl=en" target="_blank">Google Scholar</a><span class="sep">/</span><a href="https://github.com/J1Yeon-Kim" target="_blank">GitHub</a>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <div class="profile-name">Kim Ji-Yeon</div>
+        <p class="profile-text">
+          I am a Ph.D. student at <a href="https://postech.ac.kr/eng" target="_blank">POSTECH</a>, advised by Prof. <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh" target="_blank">Tae-Hyun Oh</a>.
+          <!-- at <a href="https://ami.kaist.ac.kr/" target="_blank">AMILab</a> at <a href="https://postech.ac.kr/eng" target="_blank">POSTECH</a>, advised by <a href="https://ami.kaist.ac.kr/members/tae-hyun-oh" target="_blank">Tae-Hyun Oh</a>. I received my Bachelor's degree in IT Engineering from Sookmyung Women's University. During my undergraduate, I also studied at <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a> as an exchange student. -->
+        <!-- </p> -->
+        <!-- <p class="profile-text"> -->
+          <br>
+          My research focuses on reconstructing and generating interactive 3D human models, especially human-object interaction.
+          <!-- computer vision and machine learning, specializing in understanding 3D world via 2D visual cues. -->
+          <!-- Recently, my research interests are on perceiving 3D humans in the scene. -->
+        </p>
+        <p class="profile-email">
+          Email: jiyeon.kim [at] postech [dot] ac [dot] kr
+        </p>
+      </div>
+    </div>
 
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/uni_dvps_animation.gif" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>Uni-DVPS: Unified Model for Depth-Aware Video Panoptic Segmentation</b><br>
-                <span><u>Kim Ji-Yeon</u></span>, Oh Hyun-Bin, Kwon Byung-Ki, Dahun Kim, Youngjin Kwon, Tae-Hyun Oh<br>
-                <span class="">RA-L 2024</span><br>
-                <span class="sub-info badge badge-warning">Oral presentation @ IROS 2024</span><br>
-                [<a href="https://ieeexplore.ieee.org/document/10517661" target="_blank">Paper</a> / 
-                <a href="https://jiyeon-k1m.github.io/uni-dvps" target="_blank">Project Page</a> /
-                <a href="https://github.com/kaist-ami/Uni-DVPS" target="_blank">Code</a>]
-              </div> 
-            </div> 
+    <!-- ==================== recent work slider ====================
+         Enable when representative project thumbnails are ready.
+    <div class="recent-work">
+      <div class="slider">
+        <a href="https://jiyeon-k1m.github.io/uni-dvps"><video playsinline muted autoplay loop><source src="./assets/home/image/uni_dvps_animation.mp4" type="video/mp4"></video></a>
+        <a href="https://clip-actor.github.io"><video playsinline muted autoplay loop><source src="./assets/home/image/clip-actor-fm.mp4" type="video/mp4"></video></a>
+        <a href="https://sr-i2l.github.io/"><img src="./assets/home/image/lidar.png"></a>
+        <a href="https://demr-bmvc21.github.io"><img src="./assets/home/image/demr.png"></a>
+      </div>
+    </div>
+    ============================================================= -->
 
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/min-dvps.png" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>MinDVPS: Minimal Model for Depth-aware Video Panoptic Segmentation</b><br>
-                <span><u>Kim Ji-Yeon</u></span>, Oh Hyun-Bin, Dahun Kim, Tae-Hyun Oh<br>
-                <span class="">CVPRW 2023</span><br>
-                [<a href="https://vcad.site/#/papers" target="_blank">Paper</a>]
-              </div> 
-            </div> 
+    <div class="divider"></div>
 
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/clip-actor-fm.gif" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>CLIP-Actor: Text-Driven Recommendation and Stylization for Animating Human Meshes</b><br>
-                Kim Youwang*, <span><u>Kim Ji-Yeon</u>*</span>, Tae-Hyun Oh <br>
-                <span class="">ECCV 2022</span> <br>
-                <!-- <small class="sub-info text-muted">Presented in AI for Content Creation (AI4CC) Workshop @ CVPR 2023</small><br> -->
-                <span class="sub-info badge badge-warning">Qualcomm Innovation Award 2022</span>
-                <small class="sub-info badge badge-secondary">AI4CC Workshop @ CVPR 2023</small><br>
-                [<a href="https://arxiv.org/abs/2206.04382" target="_blank">Paper</a> / 
-                <a href="https://clip-actor.github.io" target="_blank">Project Page</a> /
-                <a href="https://github.com/kaist-ami/CLIP-Actor" target="_blank">Code</a>]
-              </div> 
-            </div> 
+    <!-- ==================== publications ==================== -->
+    <h1 class="section" id="publications">Publications</h1>
 
-            <div class="row pub">
-              <div class="col-sm-3 pub-img">
-                <img src="./assets/home/image/demr.png" class="img-fluid img-shadow" alt="Project image">
-              </div>
-              <div class="col-sm-9 pub-text">
-                <b>Unified 3D Mesh Recovery of Humans and Animals by Learning Animal Exercise</b><br>
-                Kim Youwang, <span><u>Kim Ji-Yeon</u></span>, Kyungdon Joo, Tae-Hyun Oh<br>
-                <span class="">BMVC 2021</span><br>
-                <!-- <button type="button" class="btn btn-secondary btn-sm">Paper</button> -->
-                <!-- <button type="button" class="btn btn-secondary btn-sm">Project Page</button> -->
-                [<a href="https://www.bmvc2021-virtualconference.com/assets/papers/0926.pdf" target="_blank">Paper</a> / 
-                <a href="https://demr-bmvc21.github.io" target="_blank">Project Page</a>]
-              </div> 
-            </div> 
-            <!--end of publication-->
-
-            <h4 class="section">Awards & Honors</h4>
-              <ul>
-                <li>Best Paper Award at Korean Robotics Society Annual Conference (KRoC), 2024</li>
-                <li>Minister’s Award at Electronics Times ICT Paper Awards (1st rank; $12,000), 2023</li>
-                <li>Winner of Qualcomm Innovation Fellowship Korea ($4,000), 2022</li>
-                <li>Outstanding Poster Presentation, IPIU, 2022</li>
-                <li>National Science & Technology Scholarship, 2017-2019</li>
-                <li>Academic Excellence Scholarship, 2015-2016</li>
-              </ul>
-            <h4 class="section">Academic Services</h4>
-              <ul>
-                <li>Conference Reviewer: CVPR, NeurIPS, ICCV, ICLR, ICRA</li>
-                <li>Journal Reviewer: RA-L, TVCJ</li>
-              </ul>
-          </div>
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/clip-actor-x.png" alt="CLIP-Actor-X">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">CLIP-Actor-X: Text-driven 4D Human Avatar Generation via Cross-modal Synthesis-through-Optimization</span><br>
+        Kim Youwang*, Taehyun Byun*, <u>Kim Ji-Yeon</u>, Sungjoon Choi, Tae-Hyun Oh<br>
+        TPAMI 2026<span class="sub-sep">|</span><span class="sub-info sub-award">Minister's Award @ ICT Paper Awards</span><br>
+        <div class="research-links">
+          <a href="https://ieeexplore.ieee.org/document/11408037" target="_blank">Paper</a>
         </div>
       </div>
-      <div class="col-lg-1"></div>
     </div>
-    <footer class="footer mt-5 mb-2 border-top">
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/cd_teaser.png" alt="Image-to-LiDAR representation learning">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">LiDAR-Anchored Collaborative Distillation for Robust 2D Representations</span><br>
+        Wonjun Jo, Hyunwoo Ha, <u>Kim Ji-Yeon</u>, Hawook Jeong, Tae-Hyun Oh <br>
+        RA-L 2026<br>
+        <div class="research-links">
+          <a href="https://la-cd.github.io/" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://ieeexplore.ieee.org/document/11623467" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/SSCD" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/lidar.png" alt="Image-to-LiDAR representation learning">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">The Devil is in the Details: Simple Remedies for Image-to-LiDAR Representation Learning</span><br>
+        Wonjun Jo, Kwon Byung-Ki, <u>Kim Ji-Yeon</u>, Kyungdon Joo, Hawook Jung, Tae-Hyun Oh<br>
+        ACCV 2024<br>
+        <div class="research-links">
+          <a href="https://sr-i2l.github.io/" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://openaccess.thecvf.com/content/ACCV2024/papers/Jo_The_Devil_is_in_the_Details_Simple_Remedies_for__ACCV_2024_paper.pdf" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/I2L-Remedy" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <video playsinline muted autoplay loop poster="./assets/home/image/min-dvps.png">
+          <source src="./assets/home/image/uni_dvps_animation.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">Uni-DVPS: Unified Model for Depth-Aware Video Panoptic Segmentation</span><br>
+        <u>Kim Ji-Yeon</u>, Oh Hyun-Bin, Kwon Byung-Ki, Dahun Kim, Youngjin Kwon, Tae-Hyun Oh<br>
+        RA-L 2024<span class="sub-sep">|</span><span class="sub-info sub-oral">Oral presentation @ IROS 2024</span><br>
+        <div class="research-links">
+          <a href="https://jiyeon-k1m.github.io/uni-dvps" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://ieeexplore.ieee.org/document/10517661" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/Uni-DVPS" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/min-dvps.png" alt="MinDVPS">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">MinDVPS: Minimal Model for Depth-aware Video Panoptic Segmentation</span><br>
+        <u>Kim Ji-Yeon</u>, Oh Hyun-Bin, Dahun Kim, Tae-Hyun Oh<br>
+        CVPRW 2023<br>
+        <div class="research-links">
+          <a href="https://vcad.site/#/papers" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <video playsinline muted autoplay loop poster="./assets/home/image/clip-actor-x.png">
+          <source src="./assets/home/image/clip-actor-fm.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">CLIP-Actor: Text-Driven Recommendation and Stylization for Animating Human Meshes</span><br>
+        Kim Youwang*, <u>Kim Ji-Yeon</u>*, Tae-Hyun Oh<br>
+        ECCV 2022<span class="sub-sep">|</span><span class="sub-info sub-award">Qualcomm Innovation Award</span><span class="sub-sep">|</span><span class="sub-info sub-workshop">AI4CC Workshop @ CVPR 2023</span><br>
+        <div class="research-links">
+          <a href="https://clip-actor.github.io" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://arxiv.org/abs/2206.04382" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/CLIP-Actor" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row research-proj">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/demr.png" alt="Unified 3D mesh recovery">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">Unified 3D Mesh Recovery of Humans and Animals by Learning Animal Exercise</span><br>
+        Kim Youwang, <u>Kim Ji-Yeon</u>, Kyungdon Joo, Tae-Hyun Oh<br>
+        BMVC 2021<br>
+        <div class="research-links">
+          <a href="https://demr-bmvc21.github.io" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://www.bmvc2021-virtualconference.com/assets/papers/0926.pdf" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== show more / less ====================
+         Wrap the older entries above in <span id="morePubs"> ... </span>,
+         then enable these buttons and the togglePubs() script at the bottom.
+    <div onclick="togglePubs()" id="morePubsBtn" class="showBtn"><a>Show more...</a></div>
+    <div onclick="togglePubs()" id="lessPubsBtn" class="showBtn"><a>Show less...</a></div>
+    ========================================================== -->
+
+    <div class="divider"></div>
+
+    <!-- ==================== awards ==================== -->
+    <h1 class="section" id="awards">Awards &amp; Honors</h1>
+    <ul class="section-list">
+      <li>Best Paper Award at Korean Robotics Society Annual Conference (KRoC), 2024</li>
+      <li>Minister's Award at Electronics Times ICT Paper Awards (1st rank; $12,000), 2023</li>
+      <li>Winner of Qualcomm Innovation Fellowship Korea ($4,000), 2022</li>
+      <li>Outstanding Poster Presentation, IPIU, 2022</li>
+      <li>National Science &amp; Technology Scholarship, 2017-2019</li>
+      <li>Academic Excellence Scholarship, 2015-2016</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <!-- ==================== services ==================== -->
+    <h1 class="section" id="services">Academic Services</h1>
+    <ul class="section-list">
+      <li>Conference Reviewer: CVPR, NeurIPS, ICCV, ICLR, ICRA</li>
+      <li>Journal Reviewer: RA-L, TVCJ</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <footer class="footer">
+      <p class="text-center">
+        Design based on <a href="https://shurans.github.io/" target="_blank">Shuran Song</a>'s website.
+      </p>
+      <!--
       <p class="text-center">
         Feel free to use my website source code. Checkout the <a href="https://github.com/jiyeon-k1m/jiyeon-k1m.github.io" target="_blank">github repository</a>.
       </p>
+      -->
     </footer>
   </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <!-- Bootstrap JS (Popper.js bundled) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+
+  <!-- ==================== publication list toggle ====================
+  <script>
+    function togglePubs() {
+      var morePubs = document.getElementById("morePubs");
+      var morePubsBtn = document.getElementById("morePubsBtn");
+      var lessPubsBtn = document.getElementById("lessPubsBtn");
+      if (morePubsBtn.style.display === "none") {
+        morePubs.style.display = "none";
+        morePubsBtn.style.display = "inline";
+        lessPubsBtn.style.display = "none";
+      } else {
+        morePubs.style.display = "inline";
+        morePubsBtn.style.display = "none";
+        lessPubsBtn.style.display = "inline";
+      }
+    }
+  </script>
+  ============================================================== -->
 </body>
 </html>
