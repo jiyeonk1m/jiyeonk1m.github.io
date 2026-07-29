@@ -173,6 +173,15 @@ h1.section {
   margin-top: 7px;
 }
 
+/* this teaser is nearly square (1.74:1), so at full column width it stands
+   taller than the ~2:1 thumbnails around it — hold it to their height and let
+   the image scale down inside */
+.research-thumb img.thumb-short {
+  aspect-ratio: 1.9 / 1;
+  object-fit: contain;
+  object-position: center;
+}
+
 .research-info {
   font-size: 14px;
   line-height: 24px;
