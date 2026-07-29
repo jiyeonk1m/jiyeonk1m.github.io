@@ -10,3 +10,6 @@ nerfies.html
 .claude/
 CLAUDE.md
 CLAUDE.local.md
+
+# local helper scripts
+tools/
