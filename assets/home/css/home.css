@@ -155,8 +155,15 @@ h1.section {
 
 /* ------------------------------------------------------ publications ---- */
 
+/* Bootstrap's .row carries a -12px margin that its columns cancel with 12px of
+   padding. Dropping only the column padding aligns the thumbnail with the
+   "Publications" heading but also shrinks it by 12px; dropping the row margin
+   too keeps the thumbnail at its full column width AND aligned, which is how
+   the reference has it (h1 and .research-proj share the same left edge). */
+
 .research-proj {
   margin-bottom: 30px;
+  margin-left: 0;
 }
 
 .research-thumb {
