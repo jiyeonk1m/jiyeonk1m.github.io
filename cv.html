@@ -4,28 +4,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV — Ji-Yeon Kim</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/web/pdf_viewer.css">
   <style>
-    html, body { height: 100%; margin: 0; }
-    body { display: flex; flex-direction: column; font: 14px system-ui, sans-serif; background: #eee; color: #222; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: white; border-bottom: 1px solid #ddd; }
-    h1 { margin: 0; font-size: 16px; }
-    nav { display: flex; gap: 16px; }
-    a { color: #51409a; }
-    object { flex: 1; width: 100%; min-height: 0; border: 0; }
-    .fallback { padding: 24px; text-align: center; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f5f5; font: 16px system-ui, sans-serif; }
+    main { width: min(100%, 960px); margin: 0 auto; }
+    .page { position: relative; margin: 0 0 16px; background: white; overflow: hidden; }
+    canvas { display: block; width: 100%; height: auto; }
+    .textLayer { z-index: 1; }
+    .pdf-link { position: absolute; z-index: 2; }
+    .pdf-link:focus-visible { outline: 2px solid #51409a; }
+    #status { margin: 0; padding: 24px; text-align: center; }
+    @media print { body { background: white; } .page { margin: 0; break-after: page; } }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ji-Yeon Kim · CV</h1>
-    <nav aria-label="CV links">
-      <a href="https://jiyeonk1m.github.io/">Home</a>
-      <a href="assets/cv/Ji-Yeon-Kim-CV.pdf">Open PDF</a>
-      <a href="assets/cv/Ji-Yeon-Kim-CV.pdf" download="Ji-Yeon-Kim-CV.pdf">Download</a>
-    </nav>
-  </header>
-  <object data="assets/cv/Ji-Yeon-Kim-CV.pdf" type="application/pdf" aria-label="Curriculum vitae of Ji-Yeon Kim">
-    <p class="fallback">View the CV using <a href="assets/cv/Ji-Yeon-Kim-CV.pdf">Open PDF</a>.</p>
-  </object>
+  <p id="status" role="status">Loading CV…</p>
+  <main id="cv" aria-label="Curriculum vitae of Ji-Yeon Kim"></main>
+  <noscript><p><a href="assets/cv/Ji-Yeon-Kim-CV.pdf">Open CV PDF</a></p></noscript>
+  <script type="module">
+    const status = document.getElementById('status');
+    const root = document.getElementById('cv');
+    try {
+      const pdfjs = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs');
+      pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
+      const pdf = await pdfjs.getDocument('assets/cv/Ji-Yeon-Kim-CV.pdf').promise;
+      for (let number = 1; number <= pdf.numPages; number++) {
+        const page = await pdf.getPage(number);
+        const original = page.getViewport({ scale: 1 });
+        const viewport = page.getViewport({ scale: 960 / original.width });
+        const sheet = document.createElement('section');
+        sheet.className = 'page';
+        sheet.setAttribute('aria-label', `Page ${number}`);
+        sheet.style.setProperty('--scale-factor', viewport.scale);
+        const canvas = document.createElement('canvas');
+        canvas.setAttribute('aria-hidden', 'true');
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.ceil(viewport.width * ratio);
+        canvas.height = Math.ceil(viewport.height * ratio);
+        sheet.append(canvas);
+        root.append(sheet);
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport,
+          transform: [ratio, 0, 0, ratio, 0, 0] }).promise;
+        const layer = document.createElement('div');
+        layer.className = 'textLayer';
+        sheet.append(layer);
+        await new pdfjs.TextLayer({ textContentSource: await page.getTextContent(),
+          container: layer, viewport }).render();
+        // PDF.js computes text positions in the same viewport as the canvas.
+        // Scale the layer with the page on smaller screens.
+        layer.style.width = `${viewport.width}px`;
+        layer.style.height = `${viewport.height}px`;
+        for (const annotation of await page.getAnnotations()) {
+          if (annotation.subtype !== 'Link' || !annotation.url) continue;
+          const url = new URL(annotation.url, location.href);
+          if (!['https:', 'http:', 'mailto:'].includes(url.protocol)) continue;
+          const rect = viewport.convertToViewportRectangle(annotation.rect);
+          const link = document.createElement('a');
+          link.className = 'pdf-link';
+          link.href = url.href;
+          link.setAttribute('aria-label', annotation.url);
+          link.style.left = `${Math.min(rect[0], rect[2]) / viewport.width * 100}%`;
+          link.style.top = `${Math.min(rect[1], rect[3]) / viewport.height * 100}%`;
+          link.style.width = `${Math.abs(rect[2] - rect[0]) / viewport.width * 100}%`;
+          link.style.height = `${Math.abs(rect[3] - rect[1]) / viewport.height * 100}%`;
+          sheet.append(link);
+        }
+        status.hidden = true;
+      }
+      const resize = () => {
+        root.querySelectorAll('.page').forEach(sheet => {
+          const layer = sheet.querySelector('.textLayer');
+          layer.style.transformOrigin = 'top left';
+          layer.style.transform = `scale(${sheet.clientWidth / 960})`;
+        });
+      };
+      new ResizeObserver(resize).observe(root);
+      resize();
+    } catch (error) {
+      status.hidden = false;
+      status.textContent = 'Unable to display the CV. ';
+      const link = document.createElement('a');
+      link.href = 'assets/cv/Ji-Yeon-Kim-CV.pdf';
+      link.textContent = 'Open PDF';
+      status.append(link);
+      console.error(error);
+    }
+  </script>
 </body>
 </html>
