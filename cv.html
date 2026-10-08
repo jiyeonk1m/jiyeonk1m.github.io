@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Ji-Yeon Kim</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { display: flex; flex-direction: column; font: 14px system-ui, sans-serif; background: #eee; color: #222; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: white; border-bottom: 1px solid #ddd; }
+    h1 { margin: 0; font-size: 16px; }
+    nav { display: flex; gap: 16px; }
+    a { color: #51409a; }
+    object { flex: 1; width: 100%; min-height: 0; border: 0; }
+    .fallback { padding: 24px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ji-Yeon Kim · CV</h1>
+    <nav aria-label="CV links">
+      <a href="https://jiyeonk1m.github.io/">Home</a>
+      <a href="assets/cv/Ji-Yeon-Kim-CV.pdf">Open PDF</a>
+      <a href="assets/cv/Ji-Yeon-Kim-CV.pdf" download="Ji-Yeon-Kim-CV.pdf">Download</a>
+    </nav>
+  </header>
+  <object data="assets/cv/Ji-Yeon-Kim-CV.pdf" type="application/pdf" aria-label="Curriculum vitae of Ji-Yeon Kim">
+    <p class="fallback">View the CV using <a href="assets/cv/Ji-Yeon-Kim-CV.pdf">Open PDF</a>.</p>
+  </object>
+</body>
+</html>
