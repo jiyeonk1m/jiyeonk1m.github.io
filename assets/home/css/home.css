@@ -93,6 +93,7 @@ h1.section {
 
 .profile-image {
   width: 100%;
+  height: auto;
   max-width: 170px;
   border-radius: 10px;
   margin-bottom: 18px;
@@ -151,6 +152,7 @@ h1.section {
 .selected-research-card video {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   border-radius: 5px;
@@ -220,6 +222,7 @@ h1.section {
 .research-thumb img,
 .research-thumb video {
   width: 100%;
+  height: auto;
   border-radius: 5px;
   display: block;
   /* nudges the thumbnail down so its top edge optically aligns with the
