@@ -36,7 +36,7 @@
 
     <!-- ==================== header ==================== -->
     <header class="site-header">
-      <a href="#publications">PUBLICATIONS</a><span class="sep">/</span><a href="#awards">AWARDS</a>
+      <a href="#selected-research">RESEARCH</a><span class="sep">/</span><a href="#publications">PUBLICATIONS</a><span class="sep">/</span><a href="#awards">AWARDS</a>
     </header>
 
     <!-- ==================== profile ==================== -->
@@ -65,22 +65,53 @@
       </div>
     </div>
 
-    <!-- ==================== recent work slider ====================
-         Enable when representative project thumbnails are ready.
-    <div class="recent-work">
-      <div class="slider">
-        <a href="https://jiyeonk1m.github.io/uni-dvps"><video playsinline muted autoplay loop><source src="./assets/home/image/uni_dvps_animation.mp4" type="video/mp4"></video></a>
-        <a href="https://clip-actor.github.io"><video playsinline muted autoplay loop><source src="./assets/home/image/clip-actor-fm.mp4" type="video/mp4"></video></a>
-        <a href="https://sr-i2l.github.io/"><img src="./assets/home/image/lidar.png"></a>
-        <a href="https://demr-bmvc21.github.io"><img src="./assets/home/image/demr.png"></a>
+    <div class="divider"></div>
+
+    <!-- ==================== selected research ==================== -->
+    <section class="selected-research" aria-labelledby="selected-research">
+      <h1 class="section" id="selected-research">Selected Research</h1>
+      <div class="selected-research-list" tabindex="0" role="group" aria-label="Selected research projects">
+        <a class="selected-research-card" href="#combo">
+          <img src="./assets/home/image/combo.png" alt="Collaborative human–object interaction reconstruction">
+          <span class="selected-research-name">COMBO</span>
+          <span class="selected-research-venue">Under review</span>
+          <span class="selected-research-summary">4D collaborative human&ndash;object reconstruction</span>
+        </a>
+        <a class="selected-research-card" href="https://ieeexplore.ieee.org/document/11408037" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/home/image/clip-actor-x.png" alt="Text-driven 4D human avatar generation">
+          <span class="selected-research-name">CLIP-Actor-X</span>
+          <span class="selected-research-venue">TPAMI 2026</span>
+          <span class="selected-research-summary">Text-driven 4D human avatar generation</span>
+        </a>
+        <a class="selected-research-card" href="./uni-dvps.html" target="_blank" rel="noopener noreferrer">
+          <video playsinline muted autoplay loop preload="metadata" poster="./assets/home/image/min-dvps.png" aria-label="Uni-DVPS depth-aware video panoptic segmentation results">
+            <source src="./assets/home/image/uni_dvps_animation.mp4" type="video/mp4">
+          </video>
+          <span class="selected-research-name">Uni-DVPS</span>
+          <span class="selected-research-venue">RA-L 2024 (IROS Oral)</span>
+          <span class="selected-research-summary">Unified Transformer for depth and video seg.</span>
+        </a>
       </div>
-    </div>
-    ============================================================= -->
+    </section>
 
     <div class="divider"></div>
 
     <!-- ==================== publications ==================== -->
     <h1 class="section" id="publications">Publications</h1>
+
+    <div class="row research-proj" id="combo">
+      <div class="col-sm-3 research-thumb">
+        <img src="./assets/home/image/combo.png" alt="COMBO">
+      </div>
+      <div class="col-sm-9 research-info">
+        <span class="research-proj-title">A paper on 4D reconstruction of Multi-Human-Object interaction (Collaborative HOI)</span><br>
+        <!-- <u>Kim Ji-Yeon</u>, TBU<br> -->
+        <span class="research-venue"><em>Under review</em></span><br>
+        <!-- <div class="research-links"> -->
+          <!-- <a href="https://ieeexplore.ieee.org/document/11408037" target="_blank">Paper</a> -->
+        <!-- </div> -->
+      </div>
+    </div>
 
     <div class="row research-proj">
       <div class="col-sm-3 research-thumb">
@@ -89,7 +120,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">CLIP-Actor-X: Text-driven 4D Human Avatar Generation via Cross-modal Synthesis-through-Optimization</span><br>
         Kim Youwang*, Taehyun Byun*, <u>Kim Ji-Yeon</u>, Sungjoon Choi, Tae-Hyun Oh<br>
-        TPAMI 2026<span class="sub-sep">|</span><span class="sub-info sub-award">Minister's Award @ ICT Paper Awards</span><br>
+        <span class="research-venue">TPAMI 2026</span><span class="sub-sep">|</span><span class="sub-info sub-award">Korea Minister's Award</span><br>
         <div class="research-links">
           <a href="https://ieeexplore.ieee.org/document/11408037" target="_blank">Paper</a>
         </div>
@@ -103,7 +134,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">LiDAR-Anchored Collaborative Distillation for Robust 2D Representations</span><br>
         Wonjun Jo, Hyunwoo Ha, <u>Kim Ji-Yeon</u>, Hawook Jeong, Tae-Hyun Oh <br>
-        RA-L 2026<br>
+        <span class="research-venue">RA-L 2026</span><br>
         <div class="research-links">
           <a href="https://la-cd.github.io/" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://ieeexplore.ieee.org/document/11623467" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/SSCD" target="_blank">Code</a>
         </div>
@@ -117,7 +148,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">Self-Supervised Collaborative Distillation: Enhancing Lighting Robustness and 3D Awareness</span><br>
         Wonjun Jo, Hyunwoo Ha, <u>Kim Ji-Yeon</u>, Hawook Jeong, Tae-Hyun Oh <br>
-        ICCVW 2025<br>
+        <span class="research-venue">ICCVW 2025</span><br>
         <div class="research-links">
           <a href="https://openreview.net/forum?id=i1JDHqVzmv" target="_blank">Paper</a>
         </div>
@@ -131,7 +162,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">The Devil is in the Details: Simple Remedies for Image-to-LiDAR Representation Learning</span><br>
         Wonjun Jo, Kwon Byung-Ki, <u>Kim Ji-Yeon</u>, Hawook Jeong, Kyungdon Joo, Tae-Hyun Oh<br>
-        ACCV 2024<br>
+        <span class="research-venue">ACCV 2024</span><br>
         <div class="research-links">
           <a href="https://sr-i2l.github.io/" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://openaccess.thecvf.com/content/ACCV2024/papers/Jo_The_Devil_is_in_the_Details_Simple_Remedies_for__ACCV_2024_paper.pdf" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/I2L-Remedy" target="_blank">Code</a>
         </div>
@@ -147,7 +178,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">Uni-DVPS: Unified Model for Depth-Aware Video Panoptic Segmentation</span><br>
         <u>Kim Ji-Yeon</u>, Oh Hyun-Bin, Kwon Byung-Ki, Dahun Kim, Youngjin Kwon, Tae-Hyun Oh<br>
-        RA-L 2024<span class="sub-sep">|</span><span class="sub-info sub-oral">Oral presentation @ IROS 2024</span><br>
+        <span class="research-venue">RA-L 2024</span><span class="sub-sep">|</span><span class="sub-info sub-oral">Oral presentation @ IROS 2024</span><br>
         <div class="research-links">
           <a href="https://jiyeonk1m.github.io/uni-dvps" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://ieeexplore.ieee.org/document/10517661" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/Uni-DVPS" target="_blank">Code</a>
         </div>
@@ -161,7 +192,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">MinDVPS: Minimal Model for Depth-aware Video Panoptic Segmentation</span><br>
         <u>Kim Ji-Yeon</u>, Oh Hyun-Bin, Dahun Kim, Tae-Hyun Oh<br>
-        CVPRW 2023 <br>
+        <span class="research-venue">CVPRW 2023</span> <br>
         <div class="research-links">
           <a href="https://vcad.site/#/papers" target="_blank">Paper</a>
         </div>
@@ -177,7 +208,9 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">CLIP-Actor: Text-Driven Recommendation and Stylization for Animating Human Meshes</span><br>
         Kim Youwang*, <u>Kim Ji-Yeon</u>*, Tae-Hyun Oh<br>
-        ECCV 2022<span class="sub-sep">|</span><span class="sub-info sub-workshop">AI4CC Workshop @ CVPR 2023</span><span class="sub-sep">|</span><span class="sub-info sub-award">Qualcomm Innovation Fellowship Winner</span><br>
+        <span class="research-venue">ECCV 2022</span>
+        <!-- <span class="sub-sep">|</span><span class="sub-info sub-workshop">AI4CC Workshop @ CVPR 2023</span> -->
+        <span class="sub-sep">|</span><span class="sub-info sub-award">Qualcomm Innovation Fellowship Winner</span><br>
         <div class="research-links">
           <a href="https://clip-actor.github.io" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://arxiv.org/abs/2206.04382" target="_blank">Paper</a><span class="sep">&bull;</span><a href="https://github.com/kaist-ami/CLIP-Actor" target="_blank">Code</a>
         </div>
@@ -191,7 +224,7 @@
       <div class="col-sm-9 research-info">
         <span class="research-proj-title">Unified 3D Mesh Recovery of Humans and Animals by Learning Animal Exercise</span><br>
         Kim Youwang, <u>Kim Ji-Yeon</u>, Kyungdon Joo, Tae-Hyun Oh<br>
-        BMVC 2021<br>
+        <span class="research-venue">BMVC 2021</span><br>
         <div class="research-links">
           <a href="https://demr-bmvc21.github.io" target="_blank">Project Page</a><span class="sep">&bull;</span><a href="https://arxiv.org/abs/2111.02450" target="_blank">Paper</a>
         </div>

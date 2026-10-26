@@ -122,36 +122,83 @@ h1.section {
   margin: 30px 0 20px 0;
 }
 
-/* -------------------------------------------------------- recent work --- */
-/* Used by the (currently commented out) slider above the publication list. */
+/* -------------------------------------------------- selected research --- */
 
-.recent-work {
-  padding-bottom: 20px;
-  margin: 30px 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+.selected-research {
+  margin-bottom: 30px;
 }
 
-.slider {
-  display: flex;
+.selected-research-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(290px, calc((100% - 40px) / 3));
   gap: 20px;
-  width: max-content;
+  overflow-x: auto;
+  padding-bottom: 0;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
 }
 
-.slider img,
-.slider video {
-  height: 205px;
-  border-radius: 10px;
+.selected-research-card {
+  display: block;
+  min-width: 0;
+  color: #7d858e;
+  scroll-snap-align: start;
 }
 
-.slider a:hover {
+.selected-research-card img,
+.selected-research-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+.selected-research-card:hover {
+  color: #7d858e;
   border-bottom: none;
 }
 
-.recent-work::-webkit-scrollbar { background: none; height: 8px; }
-.recent-work::-webkit-scrollbar-track { background: #eee; border-radius: 4px; }
-.recent-work::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-.recent-work::-webkit-scrollbar-thumb:hover { background: #999; }
+.selected-research-name {
+  display: block;
+  color: #003373;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.selected-research-card:hover .selected-research-name {
+  color: #4a85c8;
+}
+
+.selected-research-venue {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.selected-research-summary {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.selected-research-card:focus-visible,
+.selected-research-list:focus-visible {
+  outline: 2px solid #4a85c8;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .selected-research-list {
+    grid-auto-columns: minmax(290px, 82%);
+    gap: 16px;
+  }
+}
 
 /* ------------------------------------------------------ publications ---- */
 
@@ -236,7 +283,7 @@ h1.section {
 }
 
 .sub-award {
-  color: #b8860b;   /* gold */
+  color: #ca9252;   /* gold */
 }
 
 .sub-oral {
