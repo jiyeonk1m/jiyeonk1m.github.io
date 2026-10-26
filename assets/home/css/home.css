@@ -200,6 +200,10 @@ h1.section {
     grid-auto-columns: minmax(290px, 82%);
     gap: 16px;
   }
+
+  .selected-research-summary {
+    white-space: normal;
+  }
 }
 
 /* ------------------------------------------------------ publications ---- */
@@ -358,4 +362,89 @@ h1.section {
   font-size: 13px;
   color: #a0a8b0;
   padding: 1.5em 0;
+}
+
+/* Bootstrap stacks the profile and publication columns below 576px. */
+@media (max-width: 575px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+  }
+
+  .site-header .sep {
+    padding: 0 8px;
+  }
+
+  .profile {
+    padding: 24px 0 8px;
+  }
+
+  .profile-image {
+    max-width: 136px;
+    margin-bottom: 12px;
+  }
+
+  .profile-link {
+    margin-bottom: 18px;
+  }
+
+  .profile-name {
+    text-align: center;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
+  .profile-text {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .profile-email {
+    overflow-wrap: anywhere;
+    margin-bottom: 16px;
+  }
+
+  .selected-research-list {
+    grid-auto-columns: 86%;
+  }
+
+  .research-proj {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .research-thumb,
+  .research-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .research-thumb {
+    margin-bottom: 10px;
+  }
+
+  .research-thumb img,
+  .research-thumb video {
+    margin-top: 0;
+  }
+
+  .research-links {
+    white-space: normal;
+  }
+
+  .research-links a {
+    display: inline-block;
+  }
 }
