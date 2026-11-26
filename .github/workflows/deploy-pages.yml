@@ -15,14 +15,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      artifact_name: ${{ steps.artifact-name.outputs.name }}
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/configure-pages@v5
       - name: Prepare static website
         run: |
           mkdir -p _site
@@ -31,9 +29,25 @@ jobs:
           for file in CNAME robots.txt sitemap.xml; do
             if [ -f "$file" ]; then cp "$file" _site/; fi
           done
-      - uses: actions/upload-pages-artifact@v4
+      - name: Set artifact name
+        id: artifact-name
+        run: echo "name=github-pages-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v5
         with:
+          name: ${{ steps.artifact-name.outputs.name }}
           path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v6
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
